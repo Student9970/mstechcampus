@@ -1,0 +1,37 @@
+.HighlightsCardContainer {
+    background-color: rgb(0, 0, 0);
+    padding: 30px 50px;
+    border-radius: 25px;
+    margin: 15px;
+    display: flex;
+}
+
+.HighlightsCardHeader {
+    width: 85%;
+}
+
+.HighlightsCardHeader h3 {
+    font-size: 30px;
+    color: #fff;
+}
+
+.HighlightsCardIcon {
+    height: 100px;
+    width: 15%;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-left: 10px;
+}
+
+.HighlightsCardIcon svg {
+    font-size: 48px;
+    fill: rgb(0, 0, 0);
+}
+
+.HighlightsCardDescription {
+    margin-top: 15px;
+    color: #fff;
+}

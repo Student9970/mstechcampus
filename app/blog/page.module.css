@@ -1,0 +1,28 @@
+.pageHeading {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.pageHeading img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.pageHeading h1 {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 56px;
+    position: absolute;
+    padding: 0 50px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+.whyContainer {
+    display: flex;
+    overflow: hidden;
+    border-radius: 50px;
+    position: relative;
+    height: 110vh;
+    padding: 5px 0;
+}
+
+.leftImg {
+    width: 40%;
+    overflow: hidden;
+    border-radius: 50px;
+}
+
+.leftImg img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rightText {
+    width: 60%;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}

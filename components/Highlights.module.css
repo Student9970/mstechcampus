@@ -1,0 +1,14 @@
+.highlightsContainer {
+    margin: 50px 100px;
+    /* background-color: red; */
+}
+
+.wide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.long {
+    display: grid;
+    grid-template-columns: 1fr;
+}

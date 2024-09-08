@@ -1,95 +1,125 @@
-import Image from 'next/image'
 import styles from './page.module.css'
+import HomePage from '@/components/HomePage'
+import MiniCourseCard from '@/components/MiniCourseCard'
+import courseDetails from '@/apis/courseDetails'
+import Highlights from '@/components/Highlights'
+import About from '@/components/About'
+import Footer from '@/components/Footer'
+import Testimonials from '@/components/Testimonials'
+import WhyUs from '@/components/WhyUs'
+import Achievements from '@/components/Achievements'
+import Trainers from '@/components/Trainers'
+import Affiliations from '@/components/Affiliations'
+import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+      {/* MAIN PAGE */}
+
+      <HomePage />
+
+      {/* COURSES */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h2>Courses</h2>
+          <h3>Gain Practical Knowledge from IT Experts</h3>
+        </div>
+        <div className={styles.cardsContainer}>
+          {courseDetails.map((course) => <MiniCourseCard key={course.id} title={course.title} imgSrc={course.imgSrc} />)}
         </div>
       </div>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* HIGHLIGHTS */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>Our Prime Focus</h3>
+        </div>
+        <Highlights />
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      {/* ABOUT */}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>{null}</h3>
+        </div>
+        <div className={styles.component}>
+          <About />
+        </div>
       </div>
+
+      {/* TESTIMONIALS */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>What our students have said</h3>
+        </div>
+        <div className={styles.testimonials}>
+          <Testimonials />
+        </div>
+      </div>
+
+      {/* WHY CHOOSE US */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>Why choose us?</h3>
+        </div>
+        <div className={styles.component}>
+          <WhyUs />
+        </div>
+      </div>
+
+      {/* ACHIEVEMENTS */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>Our Achievements</h3>
+        </div>
+        <div className={styles.component}>
+          <Achievements />
+        </div>
+      </div>
+
+      {/* TRAINERS */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>Meet Our Professional Trainers</h3>
+        </div>
+        <div className={styles.component}>
+          <Trainers />
+        </div>
+      </div>
+
+      {/* AFFILIATIONS */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>Recognized by Trusted Institutions</h3>
+        </div>
+        <div className={styles.component}>
+          <Affiliations />
+        </div>
+      </div>
+
+      {/* CONTACT FORM */}
+
+      <div className={styles.content}>
+        <div className={styles.heading}>
+          <h3>{null}</h3>
+        </div>
+        <div className={styles.component}>
+          <ContactForm />
+        </div>
+      </div>
+
+      {/* FOOTER */}
+      <Footer />
     </main>
   )
 }

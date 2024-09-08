@@ -1,0 +1,22 @@
+.affiliationsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 0 200px;
+    /* background: linear-gradient(to right, rgb(249, 67, 255), rgb(77, 56, 241)); */
+}
+
+.affiliationsContainer img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

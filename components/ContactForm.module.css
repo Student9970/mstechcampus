@@ -1,0 +1,104 @@
+.contactForm {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.leftContact {
+    width: 30%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../public/images/graphics-designing.jpg');
+    ;
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+.leftContact h2 {
+    font-size: 36px;
+}
+
+.detail {
+    display: flex;
+}
+
+.icon {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50px;
+}
+
+.text {
+    width: 85%;
+    padding-left: 20px;
+}
+
+.text p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.text p:nth-child(2) {
+    font-weight: 800;
+    color: #fff;
+}
+
+.text a {
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+}
+
+.rightContact {
+    width: 70%;
+    padding: 50px;
+}
+
+.rightContact h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.rightContact form {
+    margin-top: 50px;
+}
+
+.formGroup {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    /* background-color: yellow; */
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.formGroup input {
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    border-bottom: 2px solid #000;
+}
+
+.btn {
+    font-size: 20px;
+    outline: none;
+    border: none;
+    font-weight: bold;
+    padding: 12px 40px;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
