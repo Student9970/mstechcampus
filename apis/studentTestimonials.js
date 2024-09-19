@@ -1,46 +1,53 @@
 const studentTestimonials = [
-    {
-        id: 1,
-        studentText: "The entire course was so well-structured. A much needed break from the toxic productivity culture. The work-life balance and the pillars of happiness Dhruv talked about was wonderful. Video production quality was up to the mark. Kudos to Dhruv!",
-        studentName: "John Doe",
-        rating: 5
-    },
-    {
-        id: 2,
-        studentText: "I Believe conducting the course in Hindi Language was the best part. All the concepts were explained in a very simple easy to understand way. The prompt sheets prepared are also very useful for future use. Looking forward for more such creative courses by Dhruv",
-        studentName: "RAGHAV GOEL",
-        rating: 5
-    },
-    {
-        id: 3,
-        studentText: "This course proved to be a game changer and helped me a lot in killing by habit of procrastination. Really enjoyed the whole vibe of the course and how Dhruv kept it short and simple without missing anything. Thank you!",
-        studentName: "KEYUR KUMBHARE",
-        rating: 5
-    },
-    {
-        id: 4,
-        studentText: "Course is short, simple and to the point. Although I knew some of these things but I never used or applied them. Now, after taking this course, I truly agree that it is the way I want to live my life going forward. Thank you so much!",
-        studentName: "JED L.",
-        rating: 4
-    },
-    {
-        id: 5,
-        studentText: "I am very satisfied with your course. Now I am able to understand AI better than before. You have explained very well how we can use this tool to improve our lives.",
-        studentName: "RAJNIKANT K.",
-        rating: 5
-    },
-    {
-        id: 6,
-        studentText: "Extremely well structured, and very well presented. I believe the change that I would expect would be the change in the green screen. The BG could've been more simplistic other I really love everything you guys do! Thanks to each and everyone in the team for making it possible!",
-        studentName: "BUSHRA KHAN R.",
-        rating: 4
-    },
-    {
-        id: 7,
-        studentText: "This course proved to be a game changer and helped me a lot in killing by habit of procrastination. Really enjoyed the whole vibe of the course and how Dhruv kept it short and simple without missing anything. Thank you!",
-        studentName: "KEYUR KUMBHARE",
-        rating: 5
-    },
+  {
+    id: 1,
+    studentText:
+      "MS Tech Campus has transformed my career! The Power BI course was practical and easy to follow, with real-world examples that made learning enjoyable. The certification I earned helped me land my first data analyst job!",
+    studentName: "— Aditi Sharma, Data Analyst",
+    rating: 5,
+  },
+  {
+    id: 2,
+    studentText:
+      "The instructors at MS Tech Campus are true industry professionals. The Python course was comprehensive and well-structured. I felt confident in applying what I learned immediately in my workplace!",
+    studentName: "— Rahul Mehta, Software Developer",
+    rating: 5,
+  },
+  {
+    id: 3,
+    studentText:
+      "I completed the Advanced Excel course online, and it was one of the best decisions I’ve made. The live training sessions were interactive, and the support from trainers was excellent. Highly recommend!",
+    studentName: "— Neha Desai, Business Analyst",
+    rating: 5,
+  },
+  {
+    id: 4,
+    studentText:
+      "The Web Development course at MS Tech Campus gave me the practical coding skills I needed to switch careers. The lessons were easy to follow, and the hands-on projects prepared me for real-world work!",
+    studentName: "— Sameer Khan, Front-End Developer",
+    rating: 4,
+  },
+  {
+    id: 5,
+    studentText:
+      "As a working professional, I appreciated the flexibility of MS Tech Campus’s online courses. The Figma course was perfect for sharpening my design skills while balancing my job!",
+    studentName: "— Priya Joshi, UI/UX Designer",
+    rating: 5,
+  },
+  {
+    id: 6,
+    studentText:
+      "The trainers at MS Tech Campus are exceptional! The combination of online classes and practical projects in the Power BI course helped me understand complex concepts in no time. Plus, the certification added great value to my resume!",
+    studentName: "— Vikram Patil, Data Consultant",
+    rating: 4,
+  },
+  {
+    id: 7,
+    studentText:
+      "I attended the in-person Advanced Excel course, and the experience was fantastic! The instructors were highly knowledgeable, and the hands-on approach made learning engaging. The skills I gained have significantly improved my work efficiency.",
+    studentName: "— Shalini Agarwal, Financial Analyst",
+    rating: 5,
+  },
 ];
 
 export default studentTestimonials;

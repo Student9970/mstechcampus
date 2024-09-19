@@ -1,71 +1,116 @@
-import styles from './ContactForm.module.css'
+"use client";
+import styles from "./ContactForm.module.css";
 import { IoIosCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
 import { IoIosTime } from "react-icons/io";
-import Link from 'next/link';
-import Image from 'next/image';
-import contactImage from '@/public/images/graphics-designing.jpg';
+import Link from "next/link";
+import { useState } from "react";
 
 const ContactForm = () => {
-    return (
-        <div className={styles.contactForm}>
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-            <div className={styles.leftContact}>
-                <h2>Register now and secure your future</h2>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-                <div className={styles.detail}>
-                    <div className={styles.icon}>
-                        <IoIosCall />
-                    </div>
-                    <div className={styles.text}>
-                        <p>Call Us</p>
-                        <Link href="tel:+919021599825">9021599825</Link>
-                    </div>
-                </div>
+    const response = await fetch("/api/contact/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        message: data.message,
+      }),
+    });
 
-                <div className={styles.detail}>
-                    <div className={styles.icon}>
-                        <IoMdMail />
-                    </div>
-                    <div className={styles.text}>
-                        <p>Write to us</p>
-                        <Link href="mailto:mstechcampus@gmail.com">mstechcampus@gmail.com</Link>
-                    </div>
-                </div>
+    const contactRes = await response.json();
+    console.log("contactRes", contactRes);
+    if (contactRes._id) {
+      alert("Data Submitted");
+    }
+  };
 
-                <div className={styles.detail}>
-                    <div className={styles.icon}>
-                        <IoIosTime />
-                    </div>
-                    <div className={styles.text}>
-                        <p>Office Hours</p>
-                        <p>9:00 A.M. to 7:00 P.M.</p>
-                    </div>
-                </div>
+  return (
+    <div className={styles.contactForm}>
+      <div className={styles.leftContact}>
+        <h2>Register now and secure your future</h2>
 
-            </div>
-
-            <div className={styles.rightContact}>
-                <h2>Contact us</h2>
-                <form>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" name="name" />
-                    </div>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" name="email" />
-                    </div>
-                    <div className={styles.formGroup}>
-                        <label htmlFor="message">Message</label>
-                        <input type="text" id="message" name="message" />
-                    </div>
-                    <button className={styles.btn} type="submit">Send</button>
-                </form>
-            </div>
-
+        <div className={styles.detail}>
+          <div className={styles.icon}>
+            <IoIosCall />
+          </div>
+          <div className={styles.text}>
+            <p>Call Us</p>
+            <Link href="tel:+919021599825">9021599825</Link>
+          </div>
         </div>
-    )
-}
 
-export default ContactForm
+        <div className={styles.detail}>
+          <div className={styles.icon}>
+            <IoMdMail />
+          </div>
+          <div className={styles.text}>
+            <p>Write to us</p>
+            <Link href="mailto:mstechcampus@gmail.com">
+              mstechcampus@gmail.com
+            </Link>
+          </div>
+        </div>
+
+        <div className={styles.detail}>
+          <div className={styles.icon}>
+            <IoIosTime />
+          </div>
+          <div className={styles.text}>
+            <p>Office Hours</p>
+            <p>9:00 A.M. to 7:00 P.M.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.rightContact}>
+        <h2>Contact us</h2>
+        <form onSubmit={handleSubmit}>
+          <div className={styles.formGroup}>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={data.name}
+              onChange={(e) => setData({ ...data, name: e.target.value })}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="message">Message</label>
+            <input
+              type="text"
+              id="message"
+              name="message"
+              value={data.message}
+              onChange={(e) => setData({ ...data, message: e.target.value })}
+            />
+          </div>
+          <button className={styles.btn} type="submit">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default ContactForm;

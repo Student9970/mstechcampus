@@ -14,15 +14,138 @@
     z-index: -1;
 }
 
-.pageHeading h1 {
+.pageHeading p {
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 56px;
     position: absolute;
+    font-weight: bold;
     padding: 0 50px;
     z-index: 1;
     display: flex;
     align-items: center;
+}
+
+.heroCard {
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+}
+
+.heroCard h1 {
+    font-size: 56px;
+    margin: 20px 0;
+}
+
+.heroPanel {
+    height: 110vh;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 150px;
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(to right, #ffa052, #cc35ea, #1781ea);
+}
+
+.whyWork {
+    background-color: #0B0B0B;
+    color: #a1a1a1;
+}
+
+.whyWork h2 {
+    color: white;
+    text-align: center;
+    font-size: 56px;
+    padding: 50px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 40px;
+    padding: 0 200px;
+}
+
+.featureCard {
+    height: 500px;
+    overflow: hidden;
+}
+
+.featureImage {
+    height: 80%;
+    overflow: hidden;
+    background-color: black;
+    padding: 50px 50px 0 50px;
+    border-radius: 30px;
+}
+
+.featureImage img {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.featureText {
+    padding: 25px 40px;
+    font-weight: 600;
+}
+
+
+.featureText span {
+    color: white;
+}
+
+.apply {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f5f5f7;
+    margin: 150px;
+    height: 90vh;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.apply h2 {
+    font-size: 56px;
+    margin: 0 0 30px 0;
+}
+
+.apply p {
+    font-size: 32px;
+    color: #1d1d1f;
+}
+
+.apply a {
+    background-color: #1d1d1f;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 24px;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 20%;
+}
+
+.apply a:hover {
+    background-color: #0a4edf;
+    color: white;
 }

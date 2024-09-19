@@ -1,1 +1,62 @@
-.coursesCardContainer {}
+.pageHeading {
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.pageHeading img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    z-index: -1;
+}
+
+.pageHeading h1 {
+    height: 100%;
+    width: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    color: black;
+    font-size: 56px;
+    position: absolute;
+    padding: 0 50px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    padding: 50px 0;
+    /* background-color: #101010; */
+}
+
+.heading {
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.heading h2 {
+    font-weight: 300;
+    font-size: medium;
+    text-transform: uppercase;
+}
+
+.heading h3 {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.cardsContainer {
+    /* background-color: red; */
+    margin: 50px 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.loading {
+    font-size: 24px;
+    font-weight: 300;
+}
