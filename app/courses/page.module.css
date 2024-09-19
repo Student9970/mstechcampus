@@ -32,6 +32,11 @@
     /* background-color: #101010; */
 }
 
+.coursesIntro {
+    padding: 50px 150px;
+    text-align: center;
+}
+
 .heading {
     color: #000000;
     text-align: center;
@@ -52,8 +57,8 @@
 .cardsContainer {
     /* background-color: red; */
     margin: 50px 100px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
 }
 
 .loading {
