@@ -35,7 +35,11 @@ const MegaCourseContent = (props) => {
             </p>
           ))}
         </div>
-        <button className={styles.getStarted}>Get Started</button>
+        {props.join ? (
+          <button className={styles.joinNow}>Join Now</button>
+        ) : (
+          <button className={styles.getStarted}>Get Started</button>
+        )}
       </div>
     </Link>
   );

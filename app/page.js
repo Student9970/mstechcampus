@@ -1,21 +1,20 @@
-import styles from './page.module.css'
-import HomePage from '@/components/HomePage'
-import MiniCourseCard from '@/components/MiniCourseCard'
-import courseDetails from '@/apis/courseDetails'
-import Highlights from '@/components/Highlights'
-import About from '@/components/About'
-import Footer from '@/components/Footer'
-import Testimonials from '@/components/Testimonials'
-import WhyUs from '@/components/WhyUs'
-import Achievements from '@/components/Achievements'
-import Trainers from '@/components/Trainers'
-import Affiliations from '@/components/Affiliations'
-import ContactForm from '@/components/ContactForm'
+import styles from "./page.module.css";
+import HomePage from "@/components/HomePage";
+import MiniCourseCard from "@/components/MiniCourseCard";
+import courseDetails from "@/apis/courseDetails";
+import Highlights from "@/components/Highlights";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
+import WhyUs from "@/components/WhyUs";
+import Achievements from "@/components/Achievements";
+import Trainers from "@/components/Trainers";
+import Affiliations from "@/components/Affiliations";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-
       {/* MAIN PAGE */}
 
       <HomePage />
@@ -28,7 +27,13 @@ export default function Home() {
           <h3>Gain Practical Knowledge from IT Experts</h3>
         </div>
         <div className={styles.cardsContainer}>
-          {courseDetails.map((course) => <MiniCourseCard key={course.id} title={course.title} imgSrc={course.imgSrc} />)}
+          {courseDetails.map((course) => (
+            <MiniCourseCard
+              key={course.id}
+              title={course.title}
+              imgSrc={course.imgSrc}
+            />
+          ))}
         </div>
       </div>
 
@@ -121,5 +126,5 @@ export default function Home() {
       {/* FOOTER */}
       <Footer />
     </main>
-  )
+  );
 }

@@ -1,0 +1,30 @@
+.faqContainer {
+    margin: 100px 150px;
+}
+
+.faqContainer h2 {
+    color: #fff;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq {
+    background-color: #1b1b1b;
+    margin-bottom: 10px;
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px;
+    border: 0.1px solid #4c4c4c;
+}
+
+.faq h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.faq p {
+    color: #9f9f9f;
+    font-size: 14px;
+    font-weight: 700;
+}
