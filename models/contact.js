@@ -13,6 +13,10 @@ const ContactSchema = new Schema({
       "Invalid Email",
     ],
   },
+  course: {
+    type: String,
+    required: true,
+  },
   message: {
     type: String,
     required: true,

@@ -31,7 +31,7 @@ const FAQs = () => {
       <div className={styles.faqs}>
         {frequentlyAskedQuestions.map((faq, index) => {
           return (
-            <div className={styles.faq}>
+            <div className={styles.faq} key={index}>
               <h3>{faq.question}</h3>
               <p>{faq.answer}</p>
             </div>

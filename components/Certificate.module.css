@@ -33,7 +33,7 @@
     margin-top: 50px;
     height: 20%;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .seal img {

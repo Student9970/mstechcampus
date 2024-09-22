@@ -4,12 +4,14 @@ import { IoIosCall } from "react-icons/io";
 import { IoMdMail } from "react-icons/io";
 import { IoIosTime } from "react-icons/io";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ContactForm = () => {
+  const [courseList, setCourseList] = useState();
   const [data, setData] = useState({
     name: "",
     email: "",
+    course: "Select",
     message: "",
   });
 
@@ -22,6 +24,7 @@ const ContactForm = () => {
       body: JSON.stringify({
         name: data.name,
         email: data.email,
+        course: data.course,
         message: data.message,
       }),
     });
@@ -32,6 +35,16 @@ const ContactForm = () => {
       alert("Data Submitted");
     }
   };
+
+  useEffect(() => {
+    const fetchCourseNames = async () => {
+      const res = await fetch("/api/courselist");
+      const data = await res.json();
+      setCourseList(data);
+    };
+
+    fetchCourseNames();
+  }, []);
 
   return (
     <div className={styles.contactForm}>
@@ -93,6 +106,27 @@ const ContactForm = () => {
               value={data.email}
               onChange={(e) => setData({ ...data, email: e.target.value })}
             />
+          </div>
+          <div className={styles.formGroup}>
+            <label htmlFor="course">Course</label>
+            <select
+              value={data.course}
+              onChange={(e) => setData({ ...data, course: e.target.value })}
+            >
+              <option disabled value="Select">
+                Select
+              </option>
+              {courseList
+                ? courseList.map((course, index) => {
+                    return (
+                      <option key={index} value={course.title}>
+                        {course.title}
+                      </option>
+                    );
+                  })
+                : null}
+              <option value={"Message"}>Message</option>
+            </select>
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="message">Message</label>

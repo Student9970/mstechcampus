@@ -10,9 +10,26 @@ import Certificate from "@/components/Certificate";
 import FAQs from "@/components/FAQs";
 import MegaCourseContent from "@/components/MegaCourseContent";
 import Footer from "@/components/Footer";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const page = ({ params }) => {
-  const courseDetails = {
+  const router = useRouter();
+  const [courseDetails, SetCourseDetails] = useState();
+
+  useEffect(() => {
+    const { id } = params;
+
+    const fetchCourseDetails = async () => {
+      const res = await fetch(`/api/courses?id=${id}`);
+      const data = await res.json();
+      SetCourseDetails(data[0]);
+    };
+
+    fetchCourseDetails();
+  }, []);
+
+  const ccourseDetails = {
     _id: { $oid: "66eb315e3a62bf290ffc373f" },
     title: "Excel Mastery: From Basics to Advanced",
     description:
@@ -99,8 +116,6 @@ const page = ({ params }) => {
     "Certificate of Completion",
   ];
 
-  const { id } = params;
-
   const Chapter = ({ chNumber, chName }) => {
     return (
       <div className={styles.chapterNameContainer}>
@@ -116,16 +131,22 @@ const page = ({ params }) => {
     <div className={styles.mainPage}>
       <div
         className={styles.heroContainer}
-        style={{
-          background: `linear-gradient(to right, #0c0c0c 40%, #ffffff00 100%), url(${courseDetails.imgSrc})`,
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
+        style={
+          courseDetails
+            ? {
+                background: `linear-gradient(to right, #0c0c0c 40%, #ffffff00 100%), url(${courseDetails.imgSrc})`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+              }
+            : {
+                background: `linear-gradient(to right, #0c0c0c 40%, #ffffff00 100%)`,
+              }
+        }
       >
         <div className={styles.textContainer}>
-          <h1>{courseDetails.title}</h1>
-          <p>{courseDetails.description}</p>
+          <h1>{courseDetails?.title}</h1>
+          <p>{courseDetails?.description}</p>
 
           {/* Course Features */}
 
@@ -134,13 +155,13 @@ const page = ({ params }) => {
               <div className={styles.featureIcon}>
                 <FiLayers />
               </div>
-              <p>{courseDetails.chapters.length} Chapters</p>
+              <p>{courseDetails?.chapters?.length} Chapters</p>
             </div>
             <div className={styles.featue}>
               <div className={styles.featureIcon}>
                 <IoVideocamOutline />
               </div>
-              <p>Duration: {courseDetails.duration}</p>
+              <p>Duration: {courseDetails?.duration}</p>
             </div>
             <div className={styles.featue}>
               <div className={styles.featureIcon}>
@@ -153,8 +174,10 @@ const page = ({ params }) => {
           {/* CTA Buttons */}
 
           <div className={styles.btnContainer}>
-            <button>Join Now</button>
-            <button>See Curriculum</button>
+            <button onClick={() => router.push("/contact")}>Join Now</button>
+            <button onClick={() => router.push("#curriculum")}>
+              See Curriculum
+            </button>
           </div>
         </div>
       </div>
@@ -163,9 +186,9 @@ const page = ({ params }) => {
         <Highlights />
       </div>
 
-      <div className={styles.curriculum}>
+      <div className={styles.curriculum} id="curriculum">
         <div className={styles.chapterSection}>
-          {courseDetails.chapters.map((chapter, index) => {
+          {courseDetails?.chapters?.map((chapter, index) => {
             return (
               <Chapter
                 key={index}
@@ -179,30 +202,36 @@ const page = ({ params }) => {
         <div className={styles.courseHighlights}>
           <div
             className={styles.highlightImage}
-            style={{
-              background: `linear-gradient(to right, #0c0c0cc2 40%,#0c0c0cc2 100%), url(${courseDetails.imgSrc})`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-            }}
+            style={
+              courseDetails
+                ? {
+                    background: `linear-gradient(to right, #0c0c0cc2 40%,#0c0c0cc2 100%), url(${courseDetails?.imgSrc})`,
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                  }
+                : {
+                    background: `linear-gradient(to right, #0c0c0cc2 40%,#0c0c0cc2 100%)`,
+                  }
+            }
           >
-            {courseDetails.title}
+            {courseDetails?.title}
           </div>
 
-          <button>Join Now</button>
+          <button onClick={() => router.push("/contact")}>Join Now</button>
 
           <div className={styles.courseFeatures}>
             <div className={styles.featue}>
               <div className={styles.featureIcon}>
                 <FiLayers />
               </div>
-              <p>{courseDetails.chapters.length} Chapters</p>
+              <p>{courseDetails?.chapters?.length} Chapters</p>
             </div>
             <div className={styles.featue}>
               <div className={styles.featureIcon}>
                 <IoVideocamOutline />
               </div>
-              <p>Duration: {courseDetails.duration}</p>
+              <p>Duration: {courseDetails?.duration}</p>
             </div>
           </div>
 
@@ -230,12 +259,12 @@ const page = ({ params }) => {
 
       <div className={styles.cardsContainer}>
         <MegaCourseContent
-          key={courseDetails._id}
-          tag={courseDetails.tag}
-          title={courseDetails.title}
-          imgSrc={courseDetails.imgSrc}
-          description={courseDetails.description}
-          details={courseDetails.details}
+          key={courseDetails?._id}
+          tag={courseDetails?.tag}
+          title={courseDetails?.title}
+          imgSrc={courseDetails?.imgSrc}
+          description={courseDetails?.description}
+          details={courseDetails?.details}
           join={true}
         />
       </div>

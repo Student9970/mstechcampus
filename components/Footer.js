@@ -10,6 +10,7 @@ const Footer = () => {
       </div>
       <div className={styles.links}>
         <Link href="/">Home</Link>
+        <Link href="/contact">Contact</Link>
         <Link href="/about">About</Link>
         <Link href="/careers">Careers</Link>
         <Link href="/courses">Courses</Link>

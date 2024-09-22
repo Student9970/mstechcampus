@@ -56,9 +56,9 @@ const page = () => {
       <div className={styles.whyWork}>
         <h2>Why Work With Us?</h2>
         <div className={styles.features}>
-          {whyWork.map((work) => {
+          {whyWork.map((work, index) => {
             return (
-              <div className={styles.featureCard}>
+              <div key={index} className={styles.featureCard}>
                 <div className={styles.featureImage}>
                   <Image
                     height={1920}

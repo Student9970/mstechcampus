@@ -23,8 +23,8 @@ const TestimonialCard = (props) => {
         <div className={styles.studentName}>
           <h3>{props.studentName}</h3>
           <div className={styles.rating}>
-            {rating.map((star) => (
-              <FaStar />
+            {rating.map((star, index) => (
+              <FaStar key={index} />
             ))}
           </div>
         </div>

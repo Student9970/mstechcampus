@@ -1,10 +1,15 @@
 import styles from "./MegaCourseContent.module.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const MegaCourseContent = (props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const coursePage = pathname.includes("/courses/course/");
   return (
     <Link
-      href={props.courseLink || "#"}
+      href={coursePage ? "/contact" : props.courseLink || "#"}
       style={{
         background: `linear-gradient(to right, #000 40%, #ffffff00 100%), url(${props.imgSrc})`,
         backgroundPosition: "center",
@@ -18,7 +23,7 @@ const MegaCourseContent = (props) => {
         <h2 className={styles.title}>{props.title}</h2>
         <p className={styles.description}>{props.description}</p>
         <div className={styles.lists}>
-          {props.details.map((detail, index) => (
+          {props.details?.map((detail, index) => (
             <p key={index}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +41,12 @@ const MegaCourseContent = (props) => {
           ))}
         </div>
         {props.join ? (
-          <button className={styles.joinNow}>Join Now</button>
+          <button
+            onClick={() => router.push("/contact")}
+            className={styles.joinNow}
+          >
+            Join Now
+          </button>
         ) : (
           <button className={styles.getStarted}>Get Started</button>
         )}

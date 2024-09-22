@@ -1,16 +1,30 @@
-import styles from './page.module.css'
-import Image from 'next/image'
-import classes from '@/public/images/Classes.jpg'
+import styles from "./page.module.css";
+import Image from "next/image";
+import classes from "@/public/images/bg8.jpg";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const page = () => {
-    return (
-        <>
-            <div className={styles.pageHeading}>
-                <h1>Contact Us</h1>
-                <Image src={classes} />
-            </div>
-        </>
-    )
-}
+  return (
+    <>
+      <div className={styles.pageHeading}>
+        <p>
+          <Link href="/" style={{ textDecoration: "none" }}>
+            Home
+          </Link>
+          &nbsp;{"> Contact Us"}
+        </p>
+        <Image src={classes} />
+      </div>
 
-export default page
+      <div className={styles.component}>
+        <ContactForm />
+      </div>
+
+      <Footer />
+    </>
+  );
+};
+
+export default page;

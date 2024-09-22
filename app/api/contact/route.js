@@ -3,13 +3,14 @@ import Contact from "@/models/contact";
 
 export const POST = async (req) => {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, course, message } = await req.json();
 
     await connectToDB();
 
     const newContact = new Contact({
       name: name,
       email: email,
+      course: course,
       message: message,
     });
 

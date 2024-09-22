@@ -1,7 +1,6 @@
 .contactForm {
     display: flex;
-    overflow: hidden;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .leftContact {
@@ -101,4 +100,14 @@
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.formGroup select {
+    background-color: transparent;
+    padding: 10px 0;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    border-bottom: 2px solid #000;
 }
