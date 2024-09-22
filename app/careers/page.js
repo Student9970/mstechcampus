@@ -40,7 +40,7 @@ const page = () => {
           </Link>
           &nbsp;{"> Careers"}
         </p>
-        <Image src={classes} />
+        <Image src={classes} alt="Image containing Painting" />
       </div>
       <div className={styles.heroCard}>
         <h1>Join Us at MS Tech Campus</h1>

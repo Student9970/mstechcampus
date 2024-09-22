@@ -7,7 +7,11 @@ const About = () => {
   return (
     <div className={styles.aboutContainer}>
       <div className={styles.leftImg}>
-        <Image className={styles.classImg} src={classes} />
+        <Image
+          className={styles.classImg}
+          src={classes}
+          alt="Teacher Teaching students in a classroom"
+        />
       </div>
 
       <div className={styles.rightText}>

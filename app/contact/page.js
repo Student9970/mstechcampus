@@ -15,7 +15,7 @@ const page = () => {
           </Link>
           &nbsp;{"> Contact Us"}
         </p>
-        <Image src={classes} />
+        <Image src={classes} alt="Image containing Painting" />
       </div>
 
       <div className={styles.component}>

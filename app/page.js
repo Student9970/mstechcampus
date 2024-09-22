@@ -1,7 +1,7 @@
+"use client";
 import styles from "./page.module.css";
 import HomePage from "@/components/HomePage";
 import MiniCourseCard from "@/components/MiniCourseCard";
-import courseDetails from "@/apis/courseDetails";
 import Highlights from "@/components/Highlights";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
@@ -11,8 +11,19 @@ import Achievements from "@/components/Achievements";
 import Trainers from "@/components/Trainers";
 import Affiliations from "@/components/Affiliations";
 import ContactForm from "@/components/ContactForm";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [courseDetail, setCourseDetail] = useState([]);
+  useEffect(() => {
+    const fetchCoursesList = async () => {
+      const res = await fetch("api/courselist?id=true");
+      const data = await res.json();
+      setCourseDetail(data);
+    };
+    fetchCoursesList();
+  }, []);
+
   return (
     <main className={styles.main}>
       {/* MAIN PAGE */}
@@ -27,13 +38,16 @@ export default function Home() {
           <h3>Gain Practical Knowledge from IT Experts</h3>
         </div>
         <div className={styles.cardsContainer}>
-          {courseDetails.map((course) => (
-            <MiniCourseCard
-              key={course.id}
-              title={course.title}
-              imgSrc={course.imgSrc}
-            />
-          ))}
+          {courseDetail
+            ? courseDetail?.map((course) => (
+                <MiniCourseCard
+                  key={course.id}
+                  courseLink={`/courses/course/${course._id}`}
+                  title={course.title}
+                  imgSrc={course.imgSrc}
+                />
+              ))
+            : null}
         </div>
       </div>
 

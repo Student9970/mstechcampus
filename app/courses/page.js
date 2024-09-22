@@ -33,7 +33,7 @@ const page = () => {
           </Link>
           &nbsp;{"> Courses"}
         </h1>
-        <Image src={classes} />
+        <Image src={classes} alt="Image containing Painting" />
       </div>
       <div className={styles.content}>
         <p className={styles.coursesIntro}>

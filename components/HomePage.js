@@ -8,7 +8,11 @@ import { PiNotepadFill } from "react-icons/pi";
 const HomePage = () => {
   return (
     <div className={style.container}>
-      <Image className={style.techImage} src={simulation} />
+      <Image
+        className={style.techImage}
+        src={simulation}
+        alt="A man using a simulator"
+      />
       <div className={style.overLay}>
         <div className={style.texts}>
           <h1>
@@ -17,8 +21,8 @@ const HomePage = () => {
           </h1>
 
           <p>
-            At Maha Sagar Tech Campus, we teach modern tools & technologies
-            which are being used in the industry
+            At MS Tech Campus, we teach modern tools & technologies which are
+            being used in the industry
           </p>
 
           <div className={style.showCase}>

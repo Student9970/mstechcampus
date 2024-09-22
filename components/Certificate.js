@@ -22,7 +22,7 @@ const Certificate = () => {
           src="/images/ms-seal.png"
           height={500}
           width={1200}
-          alt="MS Tech Campus Logo"
+          alt="MS Tech Campus Seal"
         />
       </div>
       <div className={styles.completionDate}>

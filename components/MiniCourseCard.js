@@ -11,6 +11,7 @@ const MiniCourseCard = (props) => {
         height={200}
         width={300}
         className={styles.cardImg}
+        alt={props.title}
       />
     </Link>
   );

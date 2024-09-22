@@ -69,7 +69,7 @@ const page = () => {
           </Link>
           &nbsp;{"> Placements"}
         </h2>
-        <Image src={classes} />
+        <Image src={classes} alt="Image containing Painting" />
       </div>
 
       <div className={styles.contentContainer}>

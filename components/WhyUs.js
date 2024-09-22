@@ -11,7 +11,7 @@ const WhyUs = () => {
   return (
     <div className={styles.whyContainer}>
       <div className={styles.leftImg}>
-        <Image src={graph} />
+        <Image src={graph} alt="A graph showing upward trend" />
       </div>
 
       <div className={styles.rightText}>

@@ -15,7 +15,7 @@ const page = () => {
           </Link>
           &nbsp;{"> About Us"}
         </h1>
-        <Image src={classes} />
+        <Image src={classes} alt="Image containing painting" />
       </div>
       <div className={styles.aboutContainer}>
         <About />
